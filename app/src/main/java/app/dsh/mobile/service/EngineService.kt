@@ -16,6 +16,7 @@ import app.dsh.mobile.DshApp
 import app.dsh.mobile.MainActivity
 import app.dsh.mobile.R
 import app.dsh.mobile.engine.EngineSupervisor
+import app.dsh.mobile.engine.LanWebProxy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
