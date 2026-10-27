@@ -566,8 +566,8 @@ class ExtensionStoreActivity : ThemedActivity() {
     // ================= 杂项 =================
 
     private fun categoryColor(category: String): Int = when (category) {
-        "Language runtimes", "语言运行时" -> getColor(R.color.success)
-        "Build & tooling", "编译构建" -> getColor(R.color.warning)
+        "Language runtimes", "语言运行时", "Sprach-Laufzeiten" -> getColor(R.color.success)
+        "Build & tooling", "编译构建", "Build & Werkzeuge" -> getColor(R.color.warning)
         else -> getColor(R.color.accent_alt)
     }
 

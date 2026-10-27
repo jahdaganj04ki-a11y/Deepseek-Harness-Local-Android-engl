@@ -1,0 +1,315 @@
+{
+  "catalogVersion": 2,
+  "note": "Extension packages are fetched live from the official Termux repository (China-direct mirrors, no pre-bundling). ExtensionManager resolves the dependency closure from each item's \"packages\" field, then pulls the .deb files from a mirror, verifies them and unpacks/installs them. Version and size are read at runtime from the repository's Packages index.",
+  "mirrors": [
+    "https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main",
+    "https://mirrors.ustc.edu.cn/termux/apt/termux-main",
+    "https://mirrors.bfsu.edu.cn/termux/apt/termux-main",
+    "https://packages.termux.dev/apt/termux-main"
+  ],
+  "items": [
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Python-Interpreter + pip-Paketmanager; nach Aktivierung python3 / pip3 ausführen, um das reine Python-Ökosystem zu installieren",
+      "bins": [
+        "python3",
+        "pip3"
+      ],
+      "packages": [
+        "python",
+        "python-pip"
+      ],
+      "iconRes": "ic_ext_python"
+    },
+    {
+      "id": "openjdk-17",
+      "name": "OpenJDK 17",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Java Development Kit (javac/java/jar); Java-Programme kompilieren und ausführen, Gradle-Projekte bauen",
+      "bins": [
+        "java",
+        "javac",
+        "jar"
+      ],
+      "packages": [
+        "openjdk-17"
+      ],
+      "iconRes": "ic_ext_openjdk_17"
+    },
+    {
+      "id": "golang",
+      "name": "Go",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Go-Toolchain (go/gofmt) — eine statisch typisierte Sprache mit hervorragender Cross-Compile-Unterstützung",
+      "bins": [
+        "go",
+        "gofmt"
+      ],
+      "packages": [
+        "golang"
+      ],
+      "iconRes": "ic_ext_golang"
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Rust-Toolchain (rustc/cargo) für systemsnahe Entwicklung auf Mobilgeräten",
+      "bins": [
+        "rustc",
+        "cargo"
+      ],
+      "packages": [
+        "rust"
+      ],
+      "iconRes": "ic_ext_rust"
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Ruby-Interpreter + gem-Paketmanager",
+      "bins": [
+        "ruby",
+        "gem"
+      ],
+      "packages": [
+        "ruby"
+      ],
+      "iconRes": "ic_ext_ruby"
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "category": "Sprach-Laufzeiten",
+      "desc": "PHP-CLI-Interpreter (php -S kann einen Dev-Server starten)",
+      "bins": [
+        "php"
+      ],
+      "packages": [
+        "php"
+      ],
+      "iconRes": "ic_ext_php"
+    },
+    {
+      "id": "lua",
+      "name": "Lua",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Leichtgewichtiger Skript-Interpreter, ideal für eingebettete Automatisierungsskripte",
+      "bins": [
+        "lua"
+      ],
+      "packages": [
+        "lua54",
+        "readline"
+      ],
+      "iconRes": "ic_ext_lua"
+    },
+    {
+      "id": "perl",
+      "name": "Perl",
+      "category": "Sprach-Laufzeiten",
+      "desc": "Perl-Interpreter für Textverarbeitung und Klebeskripte",
+      "bins": [
+        "perl"
+      ],
+      "packages": [
+        "perl"
+      ],
+      "iconRes": "ic_ext_perl"
+    },
+    {
+      "id": "clang",
+      "name": "Clang / LLVM",
+      "category": "Build & Werkzeuge",
+      "desc": "C/C++-Toolchain (clang/clang++/make); kann native Bionic-Erweiterungen bauen",
+      "bins": [
+        "clang",
+        "clang++",
+        "make"
+      ],
+      "packages": [
+        "clang",
+        "make",
+        "ndk-sysroot"
+      ],
+      "iconRes": "ic_ext_clang"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "category": "Build & Werkzeuge",
+      "desc": "Vollständige Versionsverwaltung (clone/commit/push), Ersatz für die abgespeckte Toybox-Umgebung",
+      "bins": [
+        "git"
+      ],
+      "packages": [
+        "git"
+      ],
+      "iconRes": "ic_ext_git"
+    },
+    {
+      "id": "archivers",
+      "name": "Archiv-Tools",
+      "category": "Build & Werkzeuge",
+      "desc": "zip / unzip / xz / bzip2 zur Verarbeitung aller gängigen Archivformate",
+      "bins": [
+        "zip",
+        "unzip",
+        "xz"
+      ],
+      "packages": [
+        "zip",
+        "unzip",
+        "xz-utils",
+        "bzip2"
+      ],
+      "iconRes": "ic_ext_archivers"
+    },
+    {
+      "id": "android-buildtools",
+      "name": "Android-Build-Tools",
+      "category": "Build & Werkzeuge",
+      "desc": "aapt / aapt2 / apksigner / gradle / d8 — Dex-Kompilierung, APK-Paketierung und Signierung auf dem Telefon",
+      "bins": [
+        "aapt",
+        "aapt2",
+        "apksigner",
+        "gradle",
+        "d8"
+      ],
+      "packages": [
+        "aapt",
+        "aapt2",
+        "apksigner",
+        "gradle",
+        "d8"
+      ],
+      "iconRes": "ic_ext_android_buildtools"
+    },
+    {
+      "id": "cmake",
+      "name": "CMake",
+      "category": "Build & Werkzeuge",
+      "iconRes": "ic_ext_cmake",
+      "desc": "Plattformübergreifendes Build-System (Abhängigkeit für Quell-Builds wie Box64)",
+      "packages": [
+        "cmake"
+      ],
+      "bins": [
+        "cmake"
+      ]
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "category": "System & Multimedia",
+      "desc": "sqlite3-Kommandozeile zum Abfragen und Debuggen lokaler Datenbanken",
+      "bins": [
+        "sqlite3"
+      ],
+      "packages": [
+        "sqlite"
+      ],
+      "iconRes": "ic_ext_sqlite"
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "category": "System & Multimedia",
+      "desc": "Das vollständige Audio/Video-Set für Transkodierung, Zuschnitt und Frame-Extraktion (ffmpeg/ffprobe)",
+      "bins": [
+        "ffmpeg",
+        "ffprobe"
+      ],
+      "packages": [
+        "ffmpeg"
+      ],
+      "iconRes": "ic_ext_ffmpeg"
+    },
+    {
+      "id": "imagemagick",
+      "name": "ImageMagick",
+      "category": "System & Multimedia",
+      "desc": "Bildformat-Konvertierung, Skalierung und Komposition (der magick-Befehl)",
+      "bins": [
+        "magick",
+        "convert"
+      ],
+      "packages": [
+        "imagemagick"
+      ],
+      "iconRes": "ic_ext_imagemagick"
+    },
+    {
+      "id": "openssh",
+      "name": "OpenSSH",
+      "category": "System & Multimedia",
+      "desc": "ssh/scp/sftp-Clients für entfernte Server und Git-Remotes",
+      "bins": [
+        "ssh",
+        "scp"
+      ],
+      "packages": [
+        "openssh"
+      ],
+      "iconRes": "ic_ext_openssh"
+    },
+    {
+      "id": "android-tools",
+      "name": "ADB / Fastboot",
+      "category": "System & Multimedia",
+      "desc": "adb- / fastboot-Clients (mit Root-Modus kann man adb auf dem Gerät selbst steuern)",
+      "bins": [
+        "adb",
+        "fastboot"
+      ],
+      "packages": [
+        "android-tools"
+      ],
+      "iconRes": "ic_ext_android_tools"
+    },
+    {
+      "id": "vim",
+      "name": "Vim",
+      "category": "System & Multimedia",
+      "desc": "Der vollständige Terminal-Editor (Syntax-Hervorhebung, mehrere Puffer), Ersatz für Toybox-vi",
+      "bins": [
+        "vim"
+      ],
+      "packages": [
+        "vim"
+      ],
+      "iconRes": "ic_ext_vim"
+    },
+    {
+      "id": "llama-cpp",
+      "name": "llama.cpp (lokale Inferenz)",
+      "category": "System & Multimedia",
+      "desc": "Lokale LLM-/Embedding-Inferenz (llama-server, llama-cli) — treibt den On-Device-Fast-Path-Picker an",
+      "bins": [
+        "llama-server",
+        "llama-cli",
+        "llama-embedding"
+      ],
+      "packages": [
+        "llama-cpp"
+      ],
+      "iconRes": "ic_ext_llama"
+    },
+    {
+      "id": "asr-service",
+      "name": "Offline-Spracherkennung",
+      "category": "Services",
+      "desc": "Systemweite Offline-Spracherkennung (dsh-asr-service v0.5.2) — einmal installieren, von DSH automatisch für Spracheingabe erkannt",
+      "bins": [],
+      "packages": [],
+      "iconRes": "ic_ext_asr",
+      "apkUrl": "https://github.com/Soodok/dsh-asr-service/releases/download/v0.5.2/dsh-asr-service-v0.5.2-arm64-v8a.apk",
+      "apkSha256": "090ce56ce7ab41511946e2458184d1afeff87ebb68397ef9eaf2206b65b001ad",
+      "apkPackage": "app.dsh.asr"
+    }
+  ]
+}

@@ -22,7 +22,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import app.dsh.mobile.engine.LanWebProxy
+import app.dsh.mobile.LocaleHelper
 
 /**
  * 引擎前台服务。
@@ -31,6 +31,10 @@ import app.dsh.mobile.engine.LanWebProxy
  * 长任务会被强杀；specialUse 无此限制且 sideload 分发无需 Play 审核豁免。
  */
 class EngineService : Service() {
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.wrap(newBase))
+    }
 
     private var stateJob: Job? = null
     private val stateScope by lazy { CoroutineScope(Dispatchers.Main) }

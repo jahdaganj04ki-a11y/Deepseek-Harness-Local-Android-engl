@@ -1,6 +1,6 @@
 package app.dsh.mobile.engine
 
-import android.content.Context
+import app.dsh.mobile.LocaleHelper
 import android.os.Build
 import android.util.Log
 import org.json.JSONObject
@@ -299,9 +299,12 @@ class ExtensionManager(private val ctx: Context) {
 
     /** 按当前界面语言选择清单文件；无中文变体时回退到基础（英文）清单 */
     private fun catalogAsset(): String {
-        val lang = runCatching { ctx.resources.configuration.locales[0].language }
-            .getOrDefault("en")
-        return if (lang == "zh") "extensions/catalog.zh-rCN.json" else "extensions/catalog.json"
+        val lang = LocaleHelper.get(ctx)
+        return when (lang) {
+            "zh" -> "extensions/catalog.zh-rCN.json"
+            "de" -> "extensions/catalog.de.json"
+            else -> "extensions/catalog.json"
+        }
     }
 
     private fun catalogById(id: String): Extension? =

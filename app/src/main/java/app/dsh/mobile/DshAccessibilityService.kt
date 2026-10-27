@@ -31,6 +31,10 @@ import java.util.concurrent.TimeUnit
  */
 class DshAccessibilityService : AccessibilityService() {
 
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(LocaleHelper.wrap(newBase))
+    }
+
     override fun onServiceConnected() {
         super.onServiceConnected()
         instance = this

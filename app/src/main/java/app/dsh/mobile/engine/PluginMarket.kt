@@ -1,6 +1,6 @@
 package app.dsh.mobile.engine
 
-import android.content.Context
+import app.dsh.mobile.LocaleHelper
 import android.util.Log
 import org.json.JSONObject
 import java.io.File
@@ -366,11 +366,11 @@ object PluginMarket {
 
     /** 目录里的分类（id → 当前语言的标题），供筛选器使用；按语言缓存 */
     fun categories(ctx: Context): List<Pair<String, String>> = runCatching {
-        val lang = java.util.Locale.getDefault().language
+        val lang = LocaleHelper.get(ctx)
         categoriesCache?.get(lang)?.let { return it }
         val text = ctx.assets.open(CATALOG_ASSET).use { it.readBytes().toString(Charsets.UTF_8) }
         val cats = JSONObject(text).getJSONObject("metadata").getJSONObject("categories")
-        val chinese = java.util.Locale.getDefault().language == "zh"
+        val chinese = lang == "zh"
         cats.keys().asSequence().map { id ->
             val t = cats.getJSONObject(id).getJSONObject("title")
             id to (if (chinese) t.optString("zh", id) else t.optString("en", id))

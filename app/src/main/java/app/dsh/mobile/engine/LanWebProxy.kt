@@ -1,6 +1,7 @@
 package app.dsh.mobile.engine
 
 import android.util.Log
+import app.dsh.mobile.LocaleHelper
 import java.io.BufferedInputStream
 import java.io.BufferedOutputStream
 import java.io.InputStream
@@ -257,7 +258,7 @@ object LanWebProxy {
                 nm.createNotificationChannel(
                     android.app.NotificationChannel(
                         NOTIF_CHANNEL,
-                        ctx.getString(app.dsh.mobile.R.string.notif_lan_channel),
+                        LocaleHelper.wrap(ctx).getString(app.dsh.mobile.R.string.notif_lan_channel),
                         android.app.NotificationManager.IMPORTANCE_LOW,
                     )
                 )
@@ -290,8 +291,8 @@ object LanWebProxy {
                 @Suppress("DEPRECATION") android.app.Notification.Builder(ctx)
             }
             builder.setSmallIcon(app.dsh.mobile.R.drawable.ic_launcher_foreground)
-                .setContentTitle(ctx.getString(app.dsh.mobile.R.string.notif_lan_title))
-                .setContentText(ctx.getString(app.dsh.mobile.R.string.notif_lan_text, addr))
+                .setContentTitle(LocaleHelper.wrap(ctx).getString(app.dsh.mobile.R.string.notif_lan_title))
+                .setContentText(LocaleHelper.wrap(ctx).getString(app.dsh.mobile.R.string.notif_lan_text, addr))
                 .setContentIntent(open)
                 .setOngoing(true)          // 常驻，避免被随手划掉后忘记还开着
                 .setOnlyAlertOnce(true)
@@ -300,7 +301,7 @@ object LanWebProxy {
                         android.graphics.drawable.Icon.createWithResource(
                             ctx, android.R.drawable.ic_menu_close_clear_cancel
                         ),
-                        ctx.getString(app.dsh.mobile.R.string.notif_lan_action_off),
+                        LocaleHelper.wrap(ctx).getString(app.dsh.mobile.R.string.notif_lan_action_off),
                         off,
                     ).build()
                 )
